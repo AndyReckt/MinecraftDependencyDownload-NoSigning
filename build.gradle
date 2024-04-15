@@ -7,7 +7,7 @@ plugins {
 
 version '1.0.0-SNAPSHOT'
 
-subprojects {
+allprojects {
     apply plugin: 'java'
     apply plugin: 'java-library'
 
@@ -106,3 +106,4 @@ subprojects {
     }
 }
 
+name = "parent"
