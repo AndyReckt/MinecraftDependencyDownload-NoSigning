@@ -106,5 +106,3 @@ allprojects {
         finalizedBy publish
     }
 }
-
-name = "parent"
