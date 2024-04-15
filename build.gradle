@@ -3,6 +3,7 @@ plugins {
     id 'java-library'
     // id 'org.cadixdev.licenser' version '0.6.0'
     id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'maven-publish'
 }
 
 version '1.0.0-SNAPSHOT'
