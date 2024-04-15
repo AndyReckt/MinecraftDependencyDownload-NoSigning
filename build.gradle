@@ -1,8 +1,8 @@
 plugins {
     id 'java'
     id 'java-library'
-    id 'org.cadixdev.licenser' version '0.6.0'
-    id 'com.github.johnrengelman.shadow' version '7.0.0'
+    // id 'org.cadixdev.licenser' version '0.6.0'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
 version '1.0.0-SNAPSHOT'
@@ -29,20 +29,20 @@ subprojects {
         }
     }
 
-    license {
-        header = rootProject.file('LICENSE_HEADER')
-        properties {
-            String inception = '2021'
-            String currentYear = Calendar.getInstance().get(Calendar.YEAR)
+    // license {
+    //     header = rootProject.file('LICENSE_HEADER')
+    //     properties {
+    //         String inception = '2021'
+    //         String currentYear = Calendar.getInstance().get(Calendar.YEAR)
 
-            year = inception == currentYear ? currentYear : inception + "-" + currentYear
-        }
-        include '**/*.java' // only java files
-    }
+    //         year = inception == currentYear ? currentYear : inception + "-" + currentYear
+    //     }
+    //     include '**/*.java' // only java files
+    // }
 
     task publishProject {
         apply plugin: 'maven-publish'
-        apply plugin: 'signing'
+        // apply plugin: 'signing'
 
         dependsOn tasks.build
 
@@ -80,14 +80,14 @@ subprojects {
                 }
             }
 
-            signing {
-                sign publishing.publications.maven
+            // signing {
+                // sign publishing.publications.maven
 
-                def key = System.getenv('SONATYPE_KEY')
-                if (key != null) {
-                    useInMemoryPgpKeys(key, System.getenv('SONATYPE_KEY_PASS'))
-                }
-            }
+                // def key = System.getenv('SONATYPE_KEY')
+                // if (key != null) {
+                    // useInMemoryPgpKeys(key, System.getenv('SONATYPE_KEY_PASS'))
+                // }
+            // }
 
             repositories {
                 maven {
